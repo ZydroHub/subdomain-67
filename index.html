@@ -3,78 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>67 | ZydroHub</title>
+    <title>676767676767</title>
     <style>
-        /* Base Styles */
         body {
-            background-color: #0a0a0a;
-            color: #ffffff;
-            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            color: #111; /* Dark grey for the background text */
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Keeps the page from scrolling weirdly */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            overflow: hidden;
+            user-select: none;
         }
 
-        /* Container for the content */
-        .container {
-            text-align: center;
-            border: 1px solid #333;
-            padding: 3rem;
-            border-radius: 8px;
-            background: linear-gradient(145deg, #111, #080808);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        /* The background "rain" of 67s */
+        .background-wall {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 14px;
+            line-height: 1;
+            word-break: break-all;
+            opacity: 0.4;
+            z-index: 1;
         }
 
-        /* Big "67" Styling */
-        .number {
-            font-size: 8rem;
-            font-weight: bold;
-            margin: 0;
-            background: linear-gradient(to bottom, #007bff, #00d4ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.4));
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            letter-spacing: 5px;
-            color: #888;
-            text-transform: uppercase;
-            margin-top: -10px;
-        }
-
-        /* Back Button */
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
+        /* The big central 67 */
+        .main-67 {
+            position: relative;
+            z-index: 10;
+            font-size: 15rem;
+            font-weight: 900;
             color: #007bff;
-            text-decoration: none;
-            border: 1px solid #007bff;
-            padding: 10px 20px;
-            border-radius: 4px;
-            transition: 0.3s;
+            text-shadow: 0 0 20px #007bff, 0 0 40px #00d4ff;
+            animation: pulse 1.5s infinite alternate ease-in-out;
         }
 
-        .back-link:hover {
-            background-color: #007bff;
-            color: white;
-            box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+                filter: brightness(1);
+            }
+            to {
+                transform: scale(1.1);
+                filter: brightness(1.5) drop-shadow(0 0 30px #00d4ff);
+            }
+        }
+
+        /* Glitch effect for the big number */
+        .main-67::before {
+            content: "67";
+            position: absolute;
+            left: -2px;
+            text-shadow: 2px 0 red;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch {
+            0% { clip: rect(10px, 9999px, 20px, 0); }
+            20% { clip: rect(80px, 9999px, 90px, 0); }
+            40% { clip: rect(30px, 9999px, 40px, 0); }
+            60% { clip: rect(60px, 9999px, 70px, 0); }
+            80% { clip: rect(15px, 9999px, 25px, 0); }
+            100% { clip: rect(50px, 9999px, 60px, 0); }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="number">67</div>
-        <div class="subtitle">Subdomain Active</div>
-        <p style="color: #555; margin-top: 20px;">Experimentation Zone</p>
-        
-        <a href="https://zydrohub.tech" class="back-link">← Return to Main Hub</a>
-    </div>
+    <div class="background-wall" id="wall"></div>
 
+    <div class="main-67">67</div>
+
+    <script>
+        // This script fills the screen with the number 67
+        const wall = document.getElementById('wall');
+        const count = 5000; // How many 67s to render
+        let text = "";
+        for (let i = 0; i < count; i++) {
+            text += "67 ";
+        }
+        wall.innerText = text;
+    </script>
 </body>
 </html>
