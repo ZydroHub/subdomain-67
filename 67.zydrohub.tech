@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>67 | ZydroHub</title>
+    <style>
+        /* Base Styles */
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Container for the content */
+        .container {
+            text-align: center;
+            border: 1px solid #333;
+            padding: 3rem;
+            border-radius: 8px;
+            background: linear-gradient(145deg, #111, #080808);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Big "67" Styling */
+        .number {
+            font-size: 8rem;
+            font-weight: bold;
+            margin: 0;
+            background: linear-gradient(to bottom, #007bff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.4));
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 5px;
+            color: #888;
+            text-transform: uppercase;
+            margin-top: -10px;
+        }
+
+        /* Back Button */
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #007bff;
+            text-decoration: none;
+            border: 1px solid #007bff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #007bff;
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="number">67</div>
+        <div class="subtitle">Subdomain Active</div>
+        <p style="color: #555; margin-top: 20px;">Experimentation Zone</p>
+        
+        <a href="https://zydrohub.tech" class="back-link">← Return to Main Hub</a>
+    </div>
+
+</body>
+</html>
